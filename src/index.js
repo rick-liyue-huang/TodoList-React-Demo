@@ -2,8 +2,9 @@
 // for JSX
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import the component file
 import TodoList from './TodoList';
+// 2nd edition: import the component file
+import TodoListNew from './TodoListNew';
 
 
-ReactDOM.render(<TodoList />, document.getElementById('root'));
+ReactDOM.render(<TodoListNew />, document.getElementById('root'));
