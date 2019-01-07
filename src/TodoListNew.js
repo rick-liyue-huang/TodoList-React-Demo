@@ -124,6 +124,40 @@ class TodoListNew extends Component {
 
 export default TodoListNew;
 
+/*
+	when component state or props changes the render will execute.
+
+	state data
+	JSX template
+	state + template get the virtual DOM
+	and then use vDOM to produce true DOM
+	virtual DOM is the JS object
+	<div id='abc'><span>hello</span></div>
+	['div', {id:'abc'}, ['span', {}, 'hello']]
+	state change
+	get the modified virtual DOM
+	compare the original vDOM and new vDOM,and get the difference,
+	control true DOM
+*/
+
+/*
+	JSX -> JS object -> true DOM
+	return React.createElement('div', {}, 'item')
+	==> return <div>item</div>
+	return React.createElement('div', {}, React.createElement('span', {}, 'item'))
+	==> return <div><span>item</span></div>
+
+	merits:
+	1.optimization
+	2. vDOM can be used in original APP, RN
+
+	vDOM diff algorithm: how to compare two vDOMs:
+	setState manytimes only trigger one time differ algorithm;
+	if the parent dom level diffs, will discard all children dom levels;
+	the vDom 'li' list should with key={item}
+
+*/
+
 
 
 
