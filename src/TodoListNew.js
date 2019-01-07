@@ -16,12 +16,13 @@
 import React, { Component, Fragment } from 'react';
 // import the child component
 import TodoItem from './TodoItem';
-
+import axios from 'axios';
 import './style.css';
 
 class TodoListNew extends Component {
 
 	constructor(props) {
+		console.log('constructor - list');
 		super(props);
 		this.state = {
 			inputValue: 'pls',
@@ -35,7 +36,12 @@ class TodoListNew extends Component {
 		this.handleItemDelete = this.handleItemDelete.bind(this);
 	}
 
+	componentWillMount() {
+		console.log('componentWillMount - list');
+	}
+
 	render() {
+		console.log('render - list');
 		return (
 			<Fragment>
 				<div>
@@ -55,6 +61,25 @@ class TodoListNew extends Component {
 				</ul>
 			</Fragment>
 		)
+	}
+
+	componentDidMount() {
+		console.log('componentDidMount - list');
+		// this func only execute once.
+		axios.get('/api/todolist')
+			.then(() => {
+
+			})
+			.catch(() => {})
+	}
+
+
+	componentWillUpdate() {
+		console.log('componentWillUpdate - list');
+	}
+
+	componentDidUpdate() {
+		console.log('componentDidUpdate - list');
 	}
 
 // code decompose
@@ -169,6 +194,14 @@ export default TodoListNew;
 	ref: ref={(ul) => {this.ul = ul}}
 	setState( () => {}, () => {ref...})
 
+ */
+
+/*
+	optimization:
+	1. handle event in constructor();
+	2. many setState and trigger render once
+	3. same DOM level match
+	4. shouldComponentUpdate(nextProps, nextState)
  */
 
 
