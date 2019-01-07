@@ -36,6 +36,7 @@ class TodoList extends Component {
 				<div>
 					<label htmlFor='insert'>Input Content </label>
 					<input
+						
 						id="insert" 
 						value={this.state.inputValue}
 						className='input'

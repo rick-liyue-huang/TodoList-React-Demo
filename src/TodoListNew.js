@@ -41,6 +41,7 @@ class TodoListNew extends Component {
 				<div>
 					<label htmlFor='insert'>Input Content </label>
 					<input
+						ref={(input) => {this.input = input}}
 						id='insert'
 						className='input'
 						value={this.state.inputValue}
@@ -49,7 +50,7 @@ class TodoListNew extends Component {
 						 />
 					<button onClick={this.handleBtnSubmit} >Submit</button>
 				</div>
-				<ul>
+				<ul ref={(ul) => {this.ul = ul}} >
 					{this.getTodoItem()}
 				</ul>
 			</Fragment>
@@ -88,7 +89,9 @@ class TodoListNew extends Component {
 		/*this.setState({
 			inputValue: e.target.value
 		});*/
-		const value = e.target.value;
+		// console.log(e.target);
+		// const value = e.target.value;
+		const value = this.input.value;
 		// asynchronous
 		this.setState( () => ({
 			inputValue: value
@@ -104,7 +107,11 @@ class TodoListNew extends Component {
 		this.setState( (prevState) => ({
 			list: [...prevState.list, prevState.inputValue],
 			inputValue: ''
-		}));
+		}), () => {
+			// after successful asyn
+			console.log(this.ul.querySelectorAll('div').length);
+		});
+
 	}
 
 	handleItemDelete(index) {
@@ -157,6 +164,12 @@ export default TodoListNew;
 	the vDom 'li' list should with key={item}
 
 */
+
+/*
+	ref: ref={(ul) => {this.ul = ul}}
+	setState( () => {}, () => {ref...})
+
+ */
 
 
 
