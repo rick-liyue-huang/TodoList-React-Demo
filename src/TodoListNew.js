@@ -63,14 +63,19 @@ class TodoListNew extends Component {
 		)
 	}
 
+	// get data from server in 'componentDidMount' lifecycle methods
 	componentDidMount() {
 		console.log('componentDidMount - list');
 		// this func only execute once.
 		axios.get('/api/todolist')
-			.then(() => {
-
+			.then((res) => {
+				console.log(res.data);
+				this.setState(() => ({
+					list: [...res.data]
+				}));
 			})
 			.catch(() => {})
+
 	}
 
 
