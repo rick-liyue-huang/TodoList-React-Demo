@@ -6,7 +6,7 @@ import ReactDOM from 'react-dom';
 // 2nd edition: import the component file
 // import TodoListNew from './TodoListNew';
 // import App from './App';
-import TodoListAntDandRedux from './TodoListAntDandRedux';
+// import TodoListAntDandRedux from './TodoListAntDandRedux';
+import TodoListContainer from './TodoListContainer';
 
-
-ReactDOM.render(<TodoListAntDandRedux />, document.getElementById('root'));
+ReactDOM.render(<TodoListContainer />, document.getElementById('root'));
