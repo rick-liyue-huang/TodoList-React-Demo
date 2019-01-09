@@ -3,7 +3,7 @@ import { CHANGE_INPUT_VALUE, SUBMIT_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST } fro
 
 // state: 
 const defaultState = {
-	inputValue: 'please',
+	inputValue: 'ok',
 	list: []
 };
 

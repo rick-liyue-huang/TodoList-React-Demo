@@ -7,6 +7,9 @@ import ReactDOM from 'react-dom';
 // import TodoListNew from './TodoListNew';
 // import App from './App';
 // import TodoListAntDandRedux from './TodoListAntDandRedux';
-import TodoListContainer from './TodoListContainer';
+// import TodoListContainer from './TodoListContainer';
+// import TodoListContainerThunk from './TodoListContainerThunk';
 
-ReactDOM.render(<TodoListContainer />, document.getElementById('root'));
+import TodoListContainerSaga from './TodoListContainerSaga';
+
+ReactDOM.render(<TodoListContainerSaga />, document.getElementById('root'));

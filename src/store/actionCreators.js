@@ -1,5 +1,5 @@
 
-import { CHANGE_INPUT_VALUE, SUBMIT_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST } from './actionTypes';
+import { CHANGE_INPUT_VALUE, SUBMIT_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST, GET_LIST_SAGA } from './actionTypes';
 import axios from 'axios';
 
 
@@ -30,16 +30,22 @@ export const initListAction = (data) => ({
 export const getTodoList = () => {
 	// dispatch => store.dispatch
 	return (dispatch) => {
-		axios.get('/api/todolist')
+		axios.get('/api/list')
 			.then((res) => {
 				// console.log(res.data);
-				const data = res.data;
-				const action = initListAction(data);
+				// const data = res.data;
+				const action = initListAction([...res.data]);
 				dispatch(action);
 			})
 			.catch(() => {});
 	}
 }
+
+
+// saga action
+export const getListSagaAction = () => ({
+	type: GET_LIST_SAGA,
+});
 
 
 

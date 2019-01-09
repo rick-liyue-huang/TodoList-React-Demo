@@ -25,7 +25,7 @@ const TodoListUI = (props) => {
 						type='primary'
 						onClick={props.handleBtnSubmit} >Submit</Button>
 				</div>
-				<List style={{width: '300px', marginTop: '10px', marginLeft: '10px'}}
+				<List style={{width: '200px', marginTop: '10px', marginLeft: '10px'}}
 		      bordered
 		      dataSource={props.list}
 		      renderItem={(item, index) => (<List.Item onClick={() => {props.handleItemDelete(index)}} >{item}</List.Item>)}
