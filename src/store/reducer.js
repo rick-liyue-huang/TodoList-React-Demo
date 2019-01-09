@@ -1,10 +1,10 @@
 
-import { CHANGE_INPUT_VALUE, SUBMIT_TODO_ITEM, DELETE_TODO_ITEM } from './actionTypes';
+import { CHANGE_INPUT_VALUE, SUBMIT_TODO_ITEM, DELETE_TODO_ITEM, INIT_LIST } from './actionTypes';
 
 // state: 
 const defaultState = {
 	inputValue: 'please',
-	list: ['EN', 'JS', 'React.js']
+	list: []
 };
 
 
@@ -28,6 +28,12 @@ export default (state = defaultState, action) => {
 	if(action.type === DELETE_TODO_ITEM) {
 		const newState = JSON.parse(JSON.stringify(state));
 		newState.list.splice(action.index, 1);
+		return newState;
+	}
+
+	if(action.type === INIT_LIST) {
+		const newState = JSON.parse(JSON.stringify(state));
+		newState.list = action.data;
 		return newState;
 	}
 

@@ -1,12 +1,11 @@
-
 /*
-	6nd edition: decompose to UI and Container components
+	7nd edition: use redux-thunk middleware
 */
 
 
 import React, { Component, Fragment } from 'react';
 import store from './store';
-import { getInputChangeAction, getItemSubmitAction, getItemDeleteAction, initListAction } from './store/actionCreators';
+import { getInputChangeAction, getItemSubmitAction, getItemDeleteAction, initListAction, getTodoList } from './store/actionCreators';
 import 'antd/dist/antd.css';
 import TodoListUI from './TodoListUI';
 import axios from 'axios';
@@ -38,7 +37,7 @@ class TodoListContainer extends Component {
 	}
 
 	componentDidMount() {
-		axios.get('/api/todolist')
+		/*axios.get('/api/todolist')
 			.then((res) => {
 				// console.log(res.data);
 				const data = res.data;
@@ -46,17 +45,15 @@ class TodoListContainer extends Component {
 				console.log(action);
 				store.dispatch(action);
 			})
-			.catch(() => {});
+			.catch(() => {});*/
+
+			const action = getTodoList();
+			console.log(action);
+			store.dispatch(action);
 	}
 
 	handleInputChange(e) {
-		// console.log(e.target.value);
-
-		// create action
-		/*const action = {
-			type: CHANGE_INPUT_VALUE,
-			value: e.target.value
-		};*/
+		
 		const action = getInputChangeAction(e.target.value);
 
 		store.dispatch(action);
@@ -64,20 +61,13 @@ class TodoListContainer extends Component {
 
 	handleBtnSubmit() {
 
-		/*const action = {
-			type: SUBMIT_TODO_ITEM
-		};*/
 		const action = getItemSubmitAction();
 
 		store.dispatch(action);
 	}
 
 	handleItemDelete(index) {
-		// console.log(index);
-		/*const action = {
-			type: DELETE_TODO_ITEM,
-			index
-		};*/
+		
 		console.log(index);
 		const action = getItemDeleteAction(index);
 
@@ -93,10 +83,5 @@ class TodoListContainer extends Component {
 }
 
 export default TodoListContainer;
-
-
-
-
-
 
 
