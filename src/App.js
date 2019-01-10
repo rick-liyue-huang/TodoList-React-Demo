@@ -1,6 +1,6 @@
 
 /*
-	4nd edition: talk about React-Transition-Group
+	4th edition: talk about React-Transition-Group
 	using CSSTransition and TransitionGroup	
 */
 

@@ -1,6 +1,6 @@
 
 /*
-	8nd edition: import redux-saga middleware
+	8th edition: import redux-saga middleware
 
 	1. 首先创建文件的时候，在store/index里面引入和使用redux-saga
 	2. 创建sagas.js， 然后在store/index里面运行这个sagas.js文件 

@@ -1,7 +1,7 @@
 
 
 /*
-	5nd edition: ant design introduced and Redux
+	5th edition: ant design introduced and Redux
 
 	dispatch(action)    (previousState, action)
 	action Creators -> Store -><- Reducers

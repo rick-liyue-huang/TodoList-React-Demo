@@ -1,4 +1,8 @@
 
+/*
+	1st edition: 
+*/
+
 import React, { Component, Fragment } from 'react';
 
 import './style.css';

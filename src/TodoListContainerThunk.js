@@ -1,5 +1,5 @@
 /*
-	7nd edition: use redux-thunk middleware
+	7th edition: use redux-thunk middleware
 */
 
 

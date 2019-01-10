@@ -1,6 +1,6 @@
 
 /*
-	6nd edition: decompose to UI and Container components
+	6th edition: decompose to UI and Container components
 */
 
 
