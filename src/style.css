@@ -1,6 +1,115 @@
 
-.input {
-	border: 5px solid green;
-	box-sizing: content-box;
-	padding-left: 3px;
+/*
+	for the 1st and 2nd edition
+ .input {
+	border: 3px solid green;
+}*/
+
+/*.show {
+	opacity: 1;
+	transition: all 1s ease-in;
 }
+
+.hide {
+	opacity: 0;
+	transition: all 1s ease-in;
+}
+*/
+
+/*
+
+	use original css to realize react component animation effects.
+ */
+/*
+.show {
+	opacity: 1;
+	animation: show-item 1s ease-in forwards;
+}
+
+.hide {
+	opacity: 0;
+	animation: hide-item 1s ease-in forwards;
+}
+
+@keyframes show-item {
+	0% {
+		opacity: 0;
+	}
+
+	50% {
+		opacity: 0.5;
+		color: red;
+	}
+
+	100% {
+		opacity: 1;
+		color: blue;
+	}
+}
+
+@keyframes hide-item {
+	0% {
+		opacity: 1;
+		color: blue;
+	}
+
+	50% {
+		opacity: 0.5;
+		color: green;
+	}
+
+	100% {
+		opacity: 0;
+	}
+}
+*/
+
+.fade-enter, .fade-appear {
+	opacity: 0;
+	transition: opacity 1s ease-in;
+}
+
+.fade-enter-active, .fade-appear-active {
+	opacity: 0.5;
+	color: green;
+}
+
+.fade-enter-done {
+	opacity: 1;
+	color: blue;
+}
+
+.fade-exit {
+	opacity: 1;
+	color: blue;
+	transition: opacity 1s ease-in;
+}
+
+.fade-exit-active {
+	opacity: 1;
+	color: red;
+} 
+
+.fade-exit-done {
+	opacity: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
