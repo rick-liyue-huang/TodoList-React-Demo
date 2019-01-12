@@ -24,7 +24,7 @@ Here I only use react.js to complete TodoList project, in which I click button t
 1. Need to konow that one file is one component, and 'this' points to this sole component in one file. So that's why we use '{this.event}' in the component, and event.bind(this)'.
 2. ref={(el) => {this.el = el}} is used for get component in React.js, but not commended.
 3. setState(() => {}, () => {this.ul.querySelectorAll('li').length}) method can execute asynchronous one.
-4. dangerouslySetInnerHTML={{__html: item}} can input styled tag, such as <h1>title</h1>.
+4. dangerouslySetInnerHTML={{__html: item}} can input styled tag, such as '<h1>title</h1>'.
 
 #### Second Edition: 'TodoList2' and 'TodoItem2'
 
