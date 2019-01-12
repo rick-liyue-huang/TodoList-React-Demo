@@ -26,6 +26,7 @@ Here I only use react.js to complete TodoList project, in which I click button t
 3. setState(() => {}, () => {this.ul.querySelectorAll('li').length}) method can execute asynchronous one.
 4. dangerouslySetInnerHTML={{__html: item}} can input styled tag, such as title in h1 tag.
 
+
 #### Second Edition: 'TodoList2' and 'TodoItem2'
 
 ##### The core ideas of React.js

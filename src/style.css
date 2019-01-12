@@ -1,5 +1,4 @@
 
-<<<<<<< HEAD
 /*
 	for the 1st and 2nd edition
  .input {
@@ -7,31 +6,14 @@
 }*/
 
 /*.show {
-=======
-.input {
-	border: 5px solid green;
-	box-sizing: content-box;
-	padding-left: 3px;
-}
-/*
-.show {
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 	opacity: 1;
 	transition: all 1s ease-in;
 }
 
-<<<<<<< HEAD
-=======
-.show {
-	animation: show-item 2s ease-in forwards;
-}
-
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 .hide {
 	opacity: 0;
 	transition: all 1s ease-in;
 }
-<<<<<<< HEAD
 */
 
 /*
@@ -69,39 +51,10 @@
 	0% {
 		opacity: 1;
 		color: blue;
-=======
-
-.hide {
-	animation: hide-item 2s ease-in forwards
-}
-
-@keyframes hide-item {
-	0% {
-		opacity: 1;
-		color: red;
-	}
-
-	50% {
-		opacity: .5;
-		color: blue;
-	}
-
-	100% {
-		opacity: 0;
-		color: green;
-	}
-}
-
-@keyframes show-item {
-	0% {
-		opacity: 0;
-		color: green;
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 	}
 
 	50% {
 		opacity: 0.5;
-<<<<<<< HEAD
 		color: green;
 	}
 
@@ -109,49 +62,25 @@
 		opacity: 0;
 	}
 }
-=======
-		color: blue;
-	}
-
-	100% {
-		opacity: 1;
-		color: red;
-	}
-}
-
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 */
 
 .fade-enter, .fade-appear {
 	opacity: 0;
-<<<<<<< HEAD
 	transition: opacity 1s ease-in;
 }
 
 .fade-enter-active, .fade-appear-active {
 	opacity: 0.5;
 	color: green;
-=======
-}
-
-.fade-enter-active, .fade-appear-active {
-	opacity: 1;
-	transition: opacity 1s ease-in;
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 }
 
 .fade-enter-done {
 	opacity: 1;
-<<<<<<< HEAD
 	color: blue;
-=======
-	/*color: red;*/
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 }
 
 .fade-exit {
 	opacity: 1;
-<<<<<<< HEAD
 	color: blue;
 	transition: opacity 1s ease-in;
 }
@@ -160,14 +89,6 @@
 	opacity: 1;
 	color: red;
 } 
-=======
-}
-
-.fade-exit-active {
-	opacity: 0;
-	transition: opacity 1s ease-in;
-}
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
 
 .fade-exit-done {
 	opacity: 0;
@@ -190,8 +111,5 @@
 
 
 
-<<<<<<< HEAD
 
 
-=======
->>>>>>> a6fae085c9abf616131399812d683cf83279eee0
