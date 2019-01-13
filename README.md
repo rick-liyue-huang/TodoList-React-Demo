@@ -132,6 +132,20 @@ I import 'redux-saga' and create 'sagas.js', put the axios method in 'sagas.js'.
 7. for 'saga', axios method applied in 'sagas.js' with generator function.
 
 
+#### Eighth Edition: 'TodoListReactRedux8', 'TodoListUI5' and 'storeReactRedux'
+
+##### The core ideas of React.js
+'react-redux' is a plugin to be compatible to deal with state and props.
+`connect(mapStateToProps, mapDispatchToProps)(component)` will connect the propss with component.
+
+On the 8th stage, I will use 'react-redux' to deal with react component and its state, and then I repeat the 'redux-thunk' and 'redux-saga' to deal with axios method.
+
+##### Some key points:
+1. 'mapStateToProps' means that transfer the 'states' created in 'reducer.js' to component props;
+2. 'mapDispatchToProps' means that transfer the 'methods' bind with 'component' to component props;
+3. {Provider} is gotten from 'react-redux', it will wrapp the real component, and bind 'store' props, which means that the whole components in 'Provider' can use these 'states' and 'methods' as props.
+
+
 
 
 

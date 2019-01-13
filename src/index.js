@@ -48,21 +48,16 @@ import store from './storeReactRedux';
 /*
 	8th editon: import 'react-redux'
  */
+
 import TodoListReactRedux8 from './TodoListReactRedux8';
 
 const App = (
-	<Provider store={store}>
+	<Provider store={store} >
 		<TodoListReactRedux8 />
 	</Provider>
-);
+)
 
 ReactDOM.render(App, document.getElementById('root'));
-
-
-
-
-
-
 
 
 
