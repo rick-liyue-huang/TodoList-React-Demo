@@ -1,9 +1,91 @@
 
 ## TodoList-ReactJS-Demo
 
+
+
 ### Introduction
 
 In this project I will show how to finish a TodoList by React.js in an even process, which from simple to complicated one including redux, antd, axios, redux-thunk, redux-saga and react-redux. I also introduce the 'react-transition-group' plugin in one animation project called 'ToggleAndAdd'.
+
+### Preparation
+
+#### 1. Create react app by 'create-react-app' scaffold
+
+`npm i -g create-react-app` used to install the global create-react-app.
+`create-react-app app-name` used to create new react app.
+`cd app-name` and then `npm start` or `yarn start` to run the app-name.
+
+#### 2. Know about the directory of react app
+ 
+'README.md': write the markdown file by ourselves.
+'package.json': show the project introduction and dependency package, the define the react-scripts to run, build and test the project, and other browsers version limitation.
+'gitignore': ignore the selected files when upload the project to git online.
+'node_modules': the stored dependency packages.
+'public': 
+'favicon.ico': the icon in the navigation bar.
+'index.html': the homepage template in the project.
+'manifest.json': config the shorcut of the PWA mobile app.
+'src': the project source code.
+'index.js': the entry file the whole project.
+
+Note: 
+` import * as serviceWorker from './serviceWorker' ` means PWA, progressive web application, write the page code to create mobile app supported by https protocol server, and the app can be connect once the offline.
+'App.test.js': automation test file.
+
+#### 3. Components in react.js
+
+'index.js' is the entry file of the whole project, and it used for connecting 'index.html' and react components. 
+In 'index.js' file, 
+`ReactDOM.render((<App />, document.getElementById('root')); ` used to mount the component of 'App' on the 'id=root' node in 'index.html'.
+In 'App.js' file, `render() {return (....)}` used to realise the true page structure. `class App extends Component {...}` used to define App class as React Component by inheriting React.Component. All file must import 'React' to execute jsx syntax.
+
+#### 4. Responsive Design and Event Bundle
+
+`this.state = {}` is the state of components. Parent components transfer data to Children components by 'props'. Children components transfer data to parent components by method. The parent components only can transfer data to children component, but the children cannot modify the data. It is Single-direction data flow.
+
+#### 5. The vDOM principle:
+
+1. State data
+2. JSX template
+3. Data + template to produce virtual DOM
+4. The virtual DOM produces true DOM
+5. State changes
+6. Data + template to produce the new virtual DOM
+7. Compare the new virtual DOM with old vDOM
+8. Get the difference: Diff algorithm.
+9. Directly execute the true DOM
+10. JSX -> createElement -> JS OBJECT (VIRTUAL DOM) -> THE TRUE DOM
+11. The vDOM can produce true DOM in webpage, and vDOM can produce the component in original app (iOS or android).
+12. setState is asynchronous func, which means many setState only lead to one time virtual DOM comparision.
+13. Comparing difference follows the rules: compare the same level DOM. When find the top level DOM is different, their children level DOM will be discarded.
+
+#### 6. Life cycle function
+
+1.Initialisation: setup props and state, constructor()
+Mounting: componentWillMount (this component will be mounted on the page, and only executed once. But remember that the child firstly mount on the page will not execute.), render (mount component on page), componentDidMount (component did mount on page, and only executed once)
+2.updating: props: componentWillReceiveProp (when the component receive props from its parents component, and the parent component render func executes.), shouldComponentUpdate (return true or false ), (return true to) componentWillUpdate, render, componentDidUpdate.
+3.Updating: state:
+shouldComponentUpdate (return true or false), (return true to) componentWillUpdate, render, componentDidUpdate.
+4.Unmounting: componentWillUnmount,and will exist on child component.
+5. Parent component 'render' lead to child component 'render'.
+
+### 7. React performance optimisation：
+
+1.put `this.handle.. = this.handle...bind(this)` in 'constructor' functions, so only executes once.
+2. setState executing many times only leads to one time vDOM comparison.
+3. Same level DOM comparison
+4. Set `shouldComponentUpdate` to avoid render many times.
+5. Ajax request put in 'componentDidMount' function.
+
+#### 8. Redux
+
+1. Store is the solo one, which means that here have only one store in the whole project.
+2. Only store can change its 'content' --- state, but not the reducer.
+3. Reducer must be the pure function, which means that it has the 'fixed' output on the 'fixed' input, and not the 'bad' output.
+
+The Redux Apis:
+createStore, store.dispatch, store.getState, store.subscribe
+
 
 ### Project Steps
 
