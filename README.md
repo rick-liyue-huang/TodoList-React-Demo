@@ -109,7 +109,7 @@ Here I only use react.js to complete TodoList project, in which I click button t
 4. dangerouslySetInnerHTML={{__html: item}} can input styled tag, such as title in h1 tag.
 
 
-#### Second Edition: 'TodoList2' and 'TodoItem2'
+#### 2. Second Edition: 'TodoList2' and 'TodoItem2'
 
 ##### The core ideas of React.js
 1. The parent component transfer state to its children component by 'props';
@@ -141,7 +141,7 @@ In this edition, I decompose the 'TodoList1' component to parent component 'Todo
 10. notice 'shouldComponentUpdate(nextProps, nextState)' parameters;
 11. ajax getting data from server normally executes in 'componentDidMount'.
 
-#### Third Edition: 'App3'
+#### 3. Third Edition: 'App3'
 
 ##### The core ideas of React.js
 React component can set style by className={...}, and import style.css file to srealize the different style. It also can import {CSSTransition, TransitionGroup} from 'react-transition-group' plugin to add styled component.
@@ -152,7 +152,7 @@ In this stage, I will talk about how to use original css or import CSSTransition
 
 CSSTransition has some parameters and TransitionGroup should use with CSSTransition.
 
-#### Fourth Edition: 'TodoList4' and 'store'
+#### 4. Fourth Edition: 'TodoList4' and 'store'
 
 ##### The core ideas of React.js
 In order to goven the state among different React components in the complicated project, Redux is created to control the whole data in store. It will the following principles: 
@@ -171,7 +171,7 @@ In this project, I will use Ant design plugin to rewrite the TodoList project, a
 5.  if store get the new state, the component will get the new ones by subscribe method;
 6.  action is one object including 'type' and maybe 'value';
 
-#### Fifth Edition: 'TodoListContainer5', 'TodoListUI5' and 'store'
+#### 5. Fifth Edition: 'TodoListContainer5', 'TodoListUI5' and 'store'
 
 ##### The core ideas of React.js
 Normally, loading the data from server by 'axios' in 'componentDidMount' method, because this method only executes once when load page. One component only with 'render' function is called stateless component, so this component can be written in function but not class. 
@@ -186,7 +186,7 @@ In this stage, I decompose the previous todolist component to container and UI, 
 5. familiar with `axios.get().then((res) => {}).catch()` method which is an asynchronous function;
 6. here 'res' is the result from server.
 
-#### Sixth Edition: 'TodoListThunk6', 'TodoListUI5' and 'store'
+#### 6. Sixth Edition: 'TodoListThunk6', 'TodoListUI5' and 'store'
 
 ##### The core ideas of React.js
 The 'redux-thunk' is a middleware that applied between 'actionCreator' and 'store', which lets 'action' can return function. The 'thunk' can let action execute some asynchronous function such as ajax method.
@@ -197,7 +197,7 @@ In this stage, I import 'redux-thunk' and create the new action in 'actionCreato
  1. The new method 'getThunkListAction' can return the function, who execute ajax method;
  2. it includes parameter 'dispatch', which means 'store.dispatch'.
 
-#### Seventh Edition: 'TodoListSaga7', 'TodoListUI5' and 'store'
+#### 7. Seventh Edition: 'TodoListSaga7', 'TodoListUI5' and 'store'
 
 ##### The core ideas of React.js
 Same as 'redux-thunk', 'redux-saga' is also the middleware applied between actionCreator and store. The 'redux-thunk' only let action return function which can be executed in 'actionCreators.js', but 'redux-saga' will create a file named 'sagas.js', and this file is similar as 'reducer.js', in which can deal with the action and get result to return to component.
@@ -214,7 +214,7 @@ I import 'redux-saga' and create 'sagas.js', put the axios method in 'sagas.js'.
 7. for 'saga', axios method applied in 'sagas.js' with generator function.
 
 
-#### Eighth Edition: 'TodoListReactRedux8', 'TodoListUI5' and 'storeReactRedux'
+#### 8. Eighth Edition: 'TodoListReactRedux8', 'TodoListUI5' and 'storeReactRedux'
 
 ##### The core ideas of React.js
 'react-redux' is a plugin to be compatible to deal with state and props.
