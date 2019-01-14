@@ -93,6 +93,7 @@ const mapDispatchToProps = (dispatch) => {
 
 		handleServerList() {
 			const action = sagaListAction();
+			console.log(action);
 			dispatch(action);
 		}
 	}
