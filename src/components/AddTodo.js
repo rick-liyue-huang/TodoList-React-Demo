@@ -2,44 +2,24 @@
 import React, { Component } from 'react';
 
 class AddTodo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      inputValue: 'please'
-    };
-    this.handleInputClick = this.handleInputClick.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-  }
+  
   render() {
     return (
       <div>
         <input 
-          value={this.state.inputValue}
-          onClick={this.handleInputClick}
-          onChange={this.handleInputChange} />
-        <button onClick={this.handleClick}>Submit</button>
+          value={this.props.inputValue}
+          onChange={this.handleInputChange.bind(this)} />
+        <button onClick={this.handleClick.bind(this)}>Submit</button>
       </div>
     );
   }
 
-  handleInputClick() {
-    this.setState({
-      inputValue: ''
-    });
-  }
-
   handleInputChange(e) {
-    this.setState({
-      inputValue: e.target.value
-    });
+    this.props.setTodoText(e.target.value);
   }
 
   handleClick() {
-    this.props.handleAddTodo(this.state.inputValue);
-    this.setState({
-      inputValue: ''
-    });
+    this.props.addTodo(this.props.inputValue)
   }
 }
 

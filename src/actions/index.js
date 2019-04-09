@@ -14,12 +14,12 @@ export const toggleTodoAction = (id) => ({
 });
 
 
-export const setFilter = filter => ({
+export const setFilterAction = filter => ({
   type: SET_FILTER,
   filter
 });
 
-export const setTodoText = value => ({
+export const setTodoTextAction = value => ({
   type: SET_TODO_TEXT,
   value
 });
