@@ -227,6 +227,14 @@ On the 8th stage, I will use 'react-redux' to deal with react component and its 
 2. 'mapDispatchToProps' means that transfer the 'methods' bind with 'component' to component props;
 3. {Provider} is gotten from 'react-redux', it will wrapp the real component, and bind 'store' props, which means that the whole components in 'Provider' can use these 'states' and 'methods' as props.
 
+### Talk More About Todo-Project
+
+The previous project only focus on the data-source in '["", ""]' type, here I will use data-source in '[{}, {}]' type, and add some buttons to filter the list.
+
+#### Step One
+
+Realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' components in 'components' directory, and 'App' is the entry file.
+
 
 
 

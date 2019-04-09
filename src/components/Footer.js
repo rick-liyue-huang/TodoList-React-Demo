@@ -9,13 +9,13 @@ class Footer extends Component {
         <span>Show: </span>
         <button 
           disabled={filter === 'all'}
-          onClick={() => setVisibleFilter('all')}>All</button>
+          onClick={() => setVisibleFilter('all')} >All</button>
         <button 
           disabled={filter === 'active'}
-          onClick={() => setVisibleFilter('active')}>Active</button>
+          onClick={() => setVisibleFilter('active')} >Active</button>
         <button 
           disabled={filter === 'completed'}
-          onClick={() => setVisibleFilter('completed')}>Completed</button>
+          onClick={() => setVisibleFilter('completed')} >Completed</button>
       </div>
     );
   }
