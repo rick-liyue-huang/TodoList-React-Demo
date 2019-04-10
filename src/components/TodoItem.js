@@ -6,7 +6,7 @@ class TodoItem extends Component {
     const { completed, text, onClick } = this.props;
     return (
       <li 
-        style={{textDecoration : completed ? 'line-through' : ''}}
+        style={{textDecoration: completed === true ? 'line-through' : ''}}
         onClick={onClick} >
         {text}
       </li>
