@@ -15,6 +15,10 @@ class TodoList extends Component {
       </ul>
     );
   }
+
+  componentDidMount() {
+    this.props.handleFetchList();
+  }
 }
 
 export default TodoList;
