@@ -5,11 +5,7 @@ class AddTodo extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      inputValue: 'please'
-    };
-    this.handleInputClick = this.handleInputClick.bind(this);
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.hanldeClick = this.hanldeClick.bind(this);
   }
 
@@ -17,32 +13,22 @@ class AddTodo extends Component {
     return (
       <div>
         <input 
-          value={this.state.inputValue}
-          onClick={this.handleInputClick}
-          onChange={this.handleInputChange} />
+          value={this.props.inputValue}
+          onClick={this.props.handleInputClick}
+          onChange={this.handleChange} />
         <button onClick={this.hanldeClick} >Submit</button>
       </div>
     );
   }
 
-  handleInputClick() {
-    this.setState({
-      inputValue: ''
-    });
-  }
-
-  handleInputChange(e) {
-    this.setState({
-      inputValue: e.target.value
-    });
+  handleChange(e) {
+    this.props.handleInputChange(e);
   }
 
   hanldeClick() {
-    this.props.handleAddTodo(this.state.inputValue);
-    this.setState({
-      inputValue: ''
-    });
+    this.props.handleAddTodo(this.props.inputValue);
   }
+
 }
 
 export default AddTodo;
