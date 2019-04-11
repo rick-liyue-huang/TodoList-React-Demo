@@ -1,5 +1,6 @@
 
-import { combineReducers } from 'redux';
+// import { combineReducers } from 'redux';
+import { combineReducers } from 'redux-immutable';
 import filter from './filter';
 import inputValue from './inputValue';
 import list from './list';

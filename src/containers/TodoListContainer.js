@@ -2,7 +2,10 @@
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList';
 import { toggleTodoAction, fetchListAction } from '../actions';
+import { getVisibleList } from '../selectors';
+import { toJS } from '../HOCs/toJS';
 
+/*
 const getVisibleList = (list, filter) => {
   return list.filter(item => {
     if(filter === 'active') {
@@ -16,9 +19,12 @@ const getVisibleList = (list, filter) => {
     }
   });
 }
+*/
 
 const mapStateToProps = state => ({
-  list: getVisibleList(state.list.data, state.filter)
+  // list: getVisibleList(state.list.data, state.filter)
+  list: getVisibleList(state)
+  // list: getVisibleList(state).toJS()
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -32,4 +38,5 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+// export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
+export default connect(mapStateToProps, mapDispatchToProps)(toJS(TodoList));

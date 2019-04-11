@@ -6,9 +6,11 @@ import {
   inputChangeAction,
   addTodoAction
  } from '../actions';
+import { getValue } from '../selectors';
 
 const mapStateToProps = state => ({
-  inputValue: state.inputValue
+  // inputValue: state.inputValue
+  inputValue: getValue(state)
 });
 
 const mapDispatchToProps = dispatch => ({
