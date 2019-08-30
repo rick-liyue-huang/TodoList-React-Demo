@@ -237,11 +237,13 @@ Realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' compone
 
 
 
+### Talk More About Higher-order Components
 
+A higher-order component is an advanced technique in React.js for reusing component logic. HOCs are not part of the React API, and thery are a pattern that emerges from React.js composition nature. HoC is one function, which receives the component as the parameters and return a new component.
 
-
-
-
+How to realize one HoC:
+1. define one general component,
+2. wrappes the upon component (act it as parameter of the HoC function), and then define the new component as the return value of the HoC function, e.g. `higherOrderComponent(WrappedComponent)` or `@ higherOrderComponent`
 
 
 
