@@ -239,22 +239,41 @@ Realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' compone
 
 ### Talk More About Higher-order Components
 
-A higher-order component is an advanced technique in React.js for reusing component logic. HOCs are not part of the React API, and thery are a pattern that emerges from React.js composition nature. HoC is one function, which receives the component as the parameters and return a new component.
+A higher-order component is an advanced technique in React.js for reusing component logic. HOCs are not part of the React API, and thery are a pattern that emerges from React.js composition nature. HoC is one function, which receives the component as the parameters and return a new component. This pattern is usually implemented as a function, which is basically a class factory (yes, a class factory!), that has the following signature in haskell inspired pseudocode `hocFactory:: W: React.Component => E: React.Component`.
 
 How to realize one HoC:
-1. define one general component,
-2. wrappes the upon component (act it as parameter of the HoC function), and then define the new component as the return value of the HoC function, e.g. `higherOrderComponent(WrappedComponent)` or `@ higherOrderComponent`
+1. Define one general component;
+2. wrappes the upon component (act it as parameter of the HoC function), and then define the new component as the return value of the HoC function, e.g. `higherOrderComponent(WrappedComponent)` or `@ higherOrderComponent`;
+3. if we want to use @decorator, we have to run `npm run eject` to modify the project configuration;
+4. firstly, we need to install two dependencies: `npm i --save-dev babel-preset-stage-2` and `npm i --save-dev babel-preset-react-native-stage-0`;
+5. secondly, modify the 'package.json' file in "babel" figuration.
+
+Where W (WrappedComponent) is the React.Component being wrapped and E (Enhanced Component) is the new, HOC, React.Component being returned.
+The “wraps” part of the definition is intentionally vague because it can mean one of two things:
+Props Proxy: The HOC manipulates the props being passed to the WrappedComponent W,
+Inheritance Inversion: The HOC extends the WrappedComponent W.
+(代理方式的高阶组件：返回的新组件类直接继承自React.Component 类，新组件扮演的角色传入参数组件的一个代理，在新组件的render函数中，将被包裹组件渲染出来，除了告诫组件自己要做得工作，其余全部转手给被包裹的组件来完成。
+继承方式的高阶组件：采用继承关联作为参数的组件和返回的组件，加入传入的组件参数是wrappedcomponent，那么返回的组件就直接继承自wrappedcomponent).
+
+It can be done with Props Proxy:
+Manipulating props
+Accessing the instance via Refs
+Abstracting State
+Wrapping the WrappedComponent with other elements
+refer to 'Acomponent.js'
 
 
+While, inheritance Inversion allows the HOC to have access to the WrappedComponent instance via this, which means it has access to the state, props, component lifecycle hooks and the render method.
+refer to 'Dcomponent.js'
 
+Notice: we can display the component HOC name in debug way, by adding
+```
+static displayName = `Acomponent(${getDisplayName(WrappedComponent)})`;
 
-
-
-
-
-
-
-
+function getDisplayName(WrappedComponent) {
+    return WrappedComponent.displayName || WrappedComponent.name || 'Component'
+  }
+```
 
 
 
