@@ -229,9 +229,14 @@ On the 8th stage, I will use 'react-redux' to deal with react component and its 
 
 ### Talk More About Todo-Project
 
-The previous project only focus on the data-source in '["", ""]' type, here I will use data-source in '[{}, {}]' type, and add some buttons to filter the list.
+The previous project only focus on the data-source in '["", ""]' type, here I will use data-source in '[{}, {}]' type, and add some buttons to filter the list. 
+
+什么是State: 代表UI的完整且最小状态集合。
+是否通过父组件props传入; 是否不会随着时间,交互操作变化; 是否可以通过其他state或者props计算得到。分析State保存位置, 确定依赖state的每一个组件，如果某个state被多个组件依赖，寻找共同的父组件，即状态上移。添加交互行为，借助props，添加反向数据流，新增，修改，过滤. Action: 描述如何修改状态，json 对象，type属性必须，发送store.dispatch. react-redux: 向跟组件注入Store -> Provider组件, 连接React组件和Redux状态层 -> connect, 获取React组件所需的State和Actions -> map api
 
 #### Step One
+
+using serve to mock the backend server.
 
 Realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' components in 'components' directory, and 'App' is the entry file.
 

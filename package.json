@@ -30,6 +30,7 @@
     "fork-ts-checker-webpack-plugin-alt": "0.4.14",
     "fs-extra": "7.0.0",
     "html-webpack-plugin": "4.0.0-alpha.2",
+    "http-proxy-middleware": "^0.20.0",
     "identity-obj-proxy": "3.0.0",
     "immutable": "^4.0.0-rc.12",
     "jest": "23.6.0",
@@ -135,5 +136,6 @@
     "@babel/plugin-proposal-decorators": "^7.4.4",
     "babel-preset-react-native-stage-0": "^1.0.1",
     "babel-preset-stage-2": "^6.24.1"
-  }
+  },
+  "proxy": "http://localhost:5000"
 }
