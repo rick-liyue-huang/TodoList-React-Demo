@@ -1,33 +1,45 @@
 
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 class AddTodo extends Component {
-
   constructor(props) {
     super(props);
     this.state = {
-      text: 'input'
-    }
+      inputValue: 'input'
+    };
   }
-
   render() {
+    // const { handleAddTodo } = this.props;
     return (
       <div>
-        <input value={this.state.text} onChange={this.handleChange} />
-        <button onClick={this.handleClick}>Add</button>
+        <label htmlFor='insert'>Input: </label>
+        <input
+          id='insert'
+          value={this.state.inputValue}
+          onClick={this.handleInputClick}
+          onChange={this.handleInputChange} />
+        <button onClick={this.handleClick}>Submit</button>
       </div>
     )
   }
 
-  handleChange = (e) => {
-    this.setState({
-      text: e.target.value
-    });
+  handleInputClick = () => {
+    this.setState(() => ({
+      inputValue: ''
+    }));
+  }
+
+  handleInputChange = e => {
+    const value = e.target.value;
+    this.setState(() => ({
+      inputValue: value
+    }));
   }
 
   handleClick = () => {
-    this.props.addTodo(this.state.text);
+    this.props.handleAddTodo(this.state.inputValue);
   }
+
 }
 
 export default AddTodo;
