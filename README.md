@@ -233,7 +233,7 @@ In this deeper 'Todo' project, we can filter the displayed list by clicking resp
 
 #### Step One
 
-Creating 'mock/list.json' in 'public' directory, which is convenient to create mock backend data. the basic todo project, put all 'App, AddTodo, TodoList, Footer' components in 'components' directory, and 'App' is the entry file.
+Creating 'mock/list.json' in 'public' directory, which is convenient to create mock backend data. In order to realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' components in 'components' directory, and 'App' is the entry file.
 
 
 
