@@ -233,7 +233,19 @@ In this deeper 'Todo' project, we can filter the displayed list by clicking resp
 
 #### Step One
 
-Creating 'mock/list.json' in 'public' directory, which is convenient to create mock backend data. In order to realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' components in 'components' directory, and 'App' is the entry file.
+Creating 'mock/list.json' in 'public' directory, which is convenient to create mock backend data. In order to realize the basic todo project, put all 'App, AddTodo, TodoList, Footer' components in 'components' directory, and 'App' is the entry file. In this step, I haven't use redux part, and deal with all the state by the parent-children single direction date-flow.
+
+#### Step Two
+
+I will import redux and create the global state management in store. I create action and reducer directories. Firstly, I only create one single reducer file -- 'index.js' in reducers directory, and all the state defined in one file. Secondly, I recommend to destructure the state to the different reducer files by state name, and then combine all the reducer to the entry reducer.
+
+#### Step Three
+
+I will use react-redux library to simplify the state management. Create containers to deal with react-redux logic and APIs, and create components to deal with props.
+
+#### Step Four
+
+Will use redux-thunk to deal with ansyn method in componentDidMount method.
 
 
 

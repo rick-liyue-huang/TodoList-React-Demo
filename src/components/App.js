@@ -1,9 +1,28 @@
 
 import React, { Component, Fragment } from 'react';
-import AddTodo from './AddTodo';
-import TodoList from './TodoList';
-import Footer from './Footer';
+// import AddTodo from './AddTodo';
+// import TodoList from './TodoList';
+// import Footer from './Footer';
 
+import AddTodoContainer from '../containers/AddTodoContainer';
+import TodoListContainer from '../containers/TodoListContainer';
+import FooterContainer from '../containers/FooterContainer';
+
+// will use react-redux to deal with state.
+export default class App extends Component {
+  render() {
+    return (
+      <Fragment>
+        <AddTodoContainer />
+        <TodoListContainer />
+        <FooterContainer />
+      </Fragment>
+    )
+  }
+}
+
+/* 
+// here only import react component, and deal with state by react only.
 export default class App extends Component {
   
   constructor(props) {
@@ -70,3 +89,5 @@ export default class App extends Component {
     });
   }
 }
+
+*/
