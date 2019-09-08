@@ -1,7 +1,6 @@
 
 import React, { Component } from 'react';
 import TodoItem from './TodoItem';
-import Item from 'antd/lib/list/Item';
 
 export default class TodoList extends Component {
   
@@ -21,5 +20,9 @@ export default class TodoList extends Component {
         }
       </ul>
     )
+  }
+
+  componentDidMount() {
+    this.props.handleThunkList();
   }
 }

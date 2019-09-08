@@ -1,7 +1,7 @@
 
-import { CLICK_INPUT, CHANGE_INPUT, ADD_TODO, TOGGLE_TODO, SET_FILTER } from './actionTypes';
+import { CLICK_INPUT, CHANGE_INPUT, ADD_TODO, TOGGLE_TODO, SET_FILTER, FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAILURE } from './actionTypes';
 
-let nextId = 0;
+let nextId = 101;
 
 /**
  * 
@@ -44,4 +44,34 @@ export const setFilterAction = filter => ({
   type: SET_FILTER,
   filter
 });
+
+const fetchRequestAction = () => ({
+  type: FETCH_REQUEST
+});
+
+const fetchSuccessAction = data => ({
+  type: FETCH_SUCCESS,
+  data
+});
+
+const fetchFailureAction = err => ({
+  type: FETCH_FAILURE,
+  err
+});
+
+export const fetchTodoListAction = () => {
+  return (dispatch) => {
+    dispatch(fetchRequestAction());
+    return fetch('./mock/list.json')
+     .then(res => {
+       res.json().then(data => {
+         dispatch(fetchSuccessAction(data));
+       })
+     }, 
+     err => {
+       dispatch(fetchFailureAction(err));
+       console.log('an err');
+     })
+  }
+}
 

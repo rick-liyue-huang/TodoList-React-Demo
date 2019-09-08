@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList';
-import { toggleTodoAction } from '../actions';
+import { toggleTodoAction, fetchTodoListAction } from '../actions';
 
 const handleVisibleList = (filter, list) => {
   switch(filter) {
@@ -17,11 +17,12 @@ const handleVisibleList = (filter, list) => {
 }
 
 const mapStateToProps = state => ({
-  list: handleVisibleList(state.filter, state.list)
+  list: handleVisibleList(state.filter, state.list.data)
 });
 
 const mapDispatchToProps = dispatch => ({
-  handleToggleTodo: id => dispatch(toggleTodoAction(id))
+  handleToggleTodo: id => dispatch(toggleTodoAction(id)),
+  handleThunkList: () => dispatch(fetchTodoListAction())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
