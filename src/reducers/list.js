@@ -1,4 +1,6 @@
 
+// will use immutable to deal with state
+import { fromJS } from 'immutable';
 import { ADD_TODO, TOGGLE_TODO, FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAILURE } from '../actions/actionTypes';
 
 const initialState = {
@@ -7,6 +9,55 @@ const initialState = {
   error: null
 };
 
+const reducer = (state = fromJS(initialState), action) => {
+  /**
+   * here state is already be immutable object
+   */
+  switch(action.type) {
+    case FETCH_REQUEST:
+      return state.set('isFetching', true)
+    
+    case FETCH_SUCCESS:
+      return state.merge({
+        isFetching: false,
+        data: fromJS(action.data) // keep the action.data array is immutable object as well
+      })
+    case FETCH_FAILURE:
+      return state.merge({
+        isFetching: false,
+        error: action.err
+      });
+
+    default:
+      const data = state.get("data");
+      return state.set('data', list(data, action));
+      
+  }
+}
+
+const list = (state = fromJS([]), action) => {
+  switch (action.type) {
+    case ADD_TODO:
+      const item = fromJS({
+        id: action.id,
+        text: action.text,
+        completed: false
+      });
+
+      return state.push(item);
+
+    case TOGGLE_TODO:
+      return state.map(item => item.get('id') === action.id 
+        ? item.set('completed', !item.get('completed'))
+        : item);
+        
+      
+    default:
+      return state;
+  }
+}
+
+/*
 const reducer = (state = initialState, action) => {
   switch(action.type) {
     case FETCH_REQUEST:
@@ -59,5 +110,7 @@ const list = (state = [], action) => {
       return state;
   }
 }
+
+*/
 
 export default reducer;

@@ -4,9 +4,17 @@ import thunk from 'redux-thunk';
 import reducer from './reducers';
 // import { clickInputAction, changeInputAction, addTodoActioin, toggleTodoAction, setFilterAction } from './actions';
 
+// import selfdefined logger middleware
+import loggerMiddleware from './middlewares/logger';
+
+// import selfdefined logger enhancer store
+import loggerEnhancer from './enhancers/logger';
+import { apply } from 'redux-saga/effects';
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(reducer, composeEnhancers(
-  applyMiddleware(thunk)
+  /*applyMiddleware(thunk, loggerMiddleware) */
+  applyMiddleware(thunk), loggerEnhancer
 ));
 
 

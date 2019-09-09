@@ -1,7 +1,7 @@
 
 import { CLICK_INPUT, CHANGE_INPUT, ADD_TODO, TOGGLE_TODO, SET_FILTER, FETCH_REQUEST, FETCH_SUCCESS, FETCH_FAILURE } from './actionTypes';
 
-let nextId = 101;
+let nextId = 102;
 
 /**
  * 
