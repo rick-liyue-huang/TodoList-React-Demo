@@ -227,9 +227,25 @@ On the 8th stage, I will use 'react-redux' to deal with react component and its 
 2. 'mapDispatchToProps' means that transfer the 'methods' bind with 'component' to component props;
 3. {Provider} is gotten from 'react-redux', it will wrapp the real component, and bind 'store' props, which means that the whole components in 'Provider' can use these 'states' and 'methods' as props.
 
+
 ### Talk More About Todo-Project
 
-In this deeper 'Todo' project, we can filter the displayed list by clicking responsible button, and we can click the todo item to add 'line-through' style on it, which means that this item is completed. This list is composed of {id: x, text: 'xx', completed: flase} format. The 'completed' show its 'completed' status. All the coding written in 'src' directory. 
+
+In this deeper 'Todo' project, I will set the initial state by
+
+```
+{
+    inputValue: 'xx',
+    list: [{
+    id: XX,
+    text: 'xx',
+    completed: false
+    }],
+    filter: 'all'
+}
+```
+
+I devide the whole project to three components, and set three reducers by three state. We can filter the displayed list by clicking responsible button, and we can click the todo item to add 'line-through' style on it, which means that this item is completed. Footer and TodoList both use list and filter states, so we set state in theire parent 'App'. The 'completed' show its 'completed' status. We should clearify which components use the state.  All the coding written in 'src' directory. Note: put all the previous coding in src-1, I will create the new project in src.
 
 #### Step One
 
@@ -247,6 +263,21 @@ I will use react-redux library to simplify the state management. Create containe
 
 Will use redux-thunk to deal with ansyn method in componentDidMount method.
 
+#### Step Five
+
+Create selectors directory, and use selector to sole manage state and derived data from state.
+
+#### Step Six
+
+Using immutable to prevent state modified in reducer.
+
+#### Step Seven
+
+create middleware and enhancer 'logger'.
+
+#### Step Eight
+
+Using reselect to deal with selectors
 
 
 ### Talk More About Higher-order Components

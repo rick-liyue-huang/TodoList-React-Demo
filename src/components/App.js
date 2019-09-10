@@ -1,14 +1,10 @@
 
 import React, { Component, Fragment } from 'react';
-// import AddTodo from './AddTodo';
-// import TodoList from './TodoList';
-// import Footer from './Footer';
-
 import AddTodoContainer from '../containers/AddTodoContainer';
 import TodoListContainer from '../containers/TodoListContainer';
 import FooterContainer from '../containers/FooterContainer';
 
-// will use react-redux to deal with state.
+// step three: use react-redux
 export default class App extends Component {
   render() {
     return (
@@ -20,11 +16,17 @@ export default class App extends Component {
     )
   }
 }
+/*
 
-/* 
-// here only import react component, and deal with state by react only.
+// step one: only use react
+import React, { Component, Fragment } from 'react'
+import AddTodo from './AddTodo';
+import TodoList from './TodoList';
+import Footer from './Footer';
+
 export default class App extends Component {
   
+  // Footer and TodoList both use list and filter states, so we set state in theire parent.
   constructor(props) {
     super(props);
     this.state = {
@@ -33,7 +35,7 @@ export default class App extends Component {
     };
     this.nextId = 0;
   }
-  
+
   render() {
     const list = this.handleGetVisibleList();
     const { filter } = this.state;
@@ -46,10 +48,11 @@ export default class App extends Component {
     )
   }
 
+  // only show the 'filtered' list.
   handleGetVisibleList = () => {
     const currentFilter = this.state.filter;
     return this.state.list.filter(item => {
-      if(currentFilter === 'active') {
+      if (currentFilter === 'active') {
         return !item.completed;
       } else if (currentFilter === 'completed') {
         return item.completed;
@@ -71,7 +74,7 @@ export default class App extends Component {
       list: newList
     }), () => {
       console.log(newList);
-    });
+    })
   }
 
   handleToggleTodo = id => {

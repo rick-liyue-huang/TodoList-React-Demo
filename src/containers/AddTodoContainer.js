@@ -1,9 +1,7 @@
 
 import { connect } from 'react-redux';
 import AddTodo from '../components/AddTodo';
-import { clickInputAction, changeInputAction, addTodoActioin } from '../actions';
-
-// ADD selectors
+import { clickInputAction, changeInputAction, addTodoAction } from '../actions';
 import { getInputValue } from '../selectors';
 
 const mapStateToProps = state => ({
@@ -14,7 +12,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
   handleInputClick: value => dispatch(clickInputAction(value)),
   handleInputChange: value => dispatch(changeInputAction(value)),
-  handleBtnClick: text => dispatch(addTodoActioin(text)) 
+  handleAddTodo: text => dispatch(addTodoAction(text))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(AddTodo);

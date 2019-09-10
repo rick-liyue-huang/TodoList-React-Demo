@@ -7,13 +7,13 @@ export default class Footer extends Component {
     return (
       <div>
         <span>Show: </span>
-        <button 
+        <button
           disabled={filter === 'all'}
           onClick={() => handleSetVisibility('all')} >All</button>
-          <button 
+        <button
           disabled={filter === 'active'}
           onClick={() => handleSetVisibility('active')} >Active</button>
-          <button 
+        <button
           disabled={filter === 'completed'}
           onClick={() => handleSetVisibility('completed')} >Completed</button>
       </div>

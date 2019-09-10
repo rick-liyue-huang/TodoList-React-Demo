@@ -1,11 +1,7 @@
 
-// logger middleware
 
-/**
- * print the action and new state
- * @param {*} param0 
- */
-const logger = ({getState, dispatch}) => next => action => {
+// define the middleware
+export default ({getState, dispatch}) => next => action => {
   console.group(action.type);
   console.log('dispatching: ', action);
   const result = next(action);
@@ -13,5 +9,3 @@ const logger = ({getState, dispatch}) => next => action => {
   console.groupEnd();
   return result;
 }
-
-export default logger

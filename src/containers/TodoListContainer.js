@@ -1,35 +1,34 @@
 
 import { connect } from 'react-redux';
 import TodoList from '../components/TodoList';
-import { toggleTodoAction, fetchTodoListAction } from '../actions';
+import { toggleTodoAction, fetchThunkListAction } from '../actions';
+import { handleGetVisibleList } from '../selectors';
 import { toJS } from '../HoCs/toJS';
 
-// add selector
-import { handleVisibleList } from '../selectors';
 /*
-const handleVisibleList = (filter, list) => {
-  switch(filter) {
-    case 'all':
-      return list;
-    case 'active':
-      return list.filter(item => !item.completed);
-    case 'completed':
-      return list.filter(item => item.completed);
-    default:
-      return new Error('unknown filter: ', filter);
+// defined in selectors
+const handleGetVisibleList = state => {
+  const { filter, list: {data} } = state;
+  if(filter === 'all') {
+    return data;
+  } else if(filter === 'active') {
+    return data.filter(item => !item.completed);
+  } else if (filter === 'completed') {
+    return data.filter(item => item.completed);
+  } else {
+    return new Error('unknown filter: ', filter);
   }
 }
 */
 
 const mapStateToProps = state => ({
-  list: handleVisibleList(state)
-  // list: handleVisibleList(state).toJS()
+  list: handleGetVisibleList(state) // 
+  // list: handleGetVisibleList(state).toJS() // transfer back to normal js
 });
 
 const mapDispatchToProps = dispatch => ({
   handleToggleTodo: id => dispatch(toggleTodoAction(id)),
-  handleThunkList: () => dispatch(fetchTodoListAction())
+  handleThunkList: () => dispatch(fetchThunkListAction())
 });
 
-// export default connect(mapStateToProps, mapDispatchToProps)(TodoList);
 export default connect(mapStateToProps, mapDispatchToProps)(toJS(TodoList));
